@@ -1,0 +1,6 @@
+C:\Development\DC Assignment 2\Tutorial 4\Bank Application\API Library\bin\Debug\API Library.dll
+C:\Development\DC Assignment 2\Tutorial 4\Bank Application\API Library\bin\Debug\API Library.pdb
+C:\Development\DC Assignment 2\Tutorial 4\Bank Application\API Library\obj\Debug\API Library.csprojAssemblyReference.cache
+C:\Development\DC Assignment 2\Tutorial 4\Bank Application\API Library\obj\Debug\API Library.csproj.CoreCompileInputs.cache
+C:\Development\DC Assignment 2\Tutorial 4\Bank Application\API Library\obj\Debug\API Library.dll
+C:\Development\DC Assignment 2\Tutorial 4\Bank Application\API Library\obj\Debug\API Library.pdb
