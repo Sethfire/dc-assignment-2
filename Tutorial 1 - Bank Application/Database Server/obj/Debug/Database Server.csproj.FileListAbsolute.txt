@@ -1,0 +1,22 @@
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\bin\Debug\Database Server.exe.config
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\bin\Debug\Database Server.exe
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\bin\Debug\Database Server.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\bin\Debug\Database Library.dll
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\bin\Debug\Database Library.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\obj\Debug\Database Server.csprojAssemblyReference.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\obj\Debug\Database Server.csproj.CoreCompileInputs.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\obj\Debug\Database Server.csproj.CopyComplete
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\obj\Debug\Database Server.exe
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Server\obj\Debug\Database Server.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\bin\Debug\Database Server.exe.config
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\bin\Debug\Database Server.exe
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\bin\Debug\Database Server.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\bin\Debug\Database Interface.dll
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\bin\Debug\Database Library.dll
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\bin\Debug\Database Interface.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\bin\Debug\Database Library.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\obj\Debug\Database Server.csprojAssemblyReference.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\obj\Debug\Database Server.csproj.CoreCompileInputs.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\obj\Debug\Database Server.csproj.CopyComplete
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\obj\Debug\Database Server.exe
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Server\obj\Debug\Database Server.pdb
