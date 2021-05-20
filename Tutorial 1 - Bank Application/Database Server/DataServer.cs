@@ -42,7 +42,7 @@ namespace Database_Server
             bal = database.GetBalanceByIndex(index);
             fName = database.GetFirstNameByIndex(index);
             lName = database.GetLastNameByIndex(index);
-            icon = database.GetIconByIndex(index);
+            icon = new Bitmap(database.GetIconByIndex(index));
         }
     }
 }

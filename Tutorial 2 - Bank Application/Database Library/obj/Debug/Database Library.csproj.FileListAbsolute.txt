@@ -1,0 +1,24 @@
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Library\bin\Debug\Database Library.dll
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Library\bin\Debug\Database Library.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Library\obj\Debug\Database Library.csprojAssemblyReference.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Library\obj\Debug\Database Library.csproj.CoreCompileInputs.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Library\obj\Debug\Database Library.dll
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1\Bank Application\Database Library\obj\Debug\Database Library.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\bin\Debug\Database Library.dll
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\bin\Debug\Database Library.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\obj\Debug\Database Library.csprojAssemblyReference.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\obj\Debug\Database Library.csproj.CoreCompileInputs.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\obj\Debug\Database Library.dll
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\obj\Debug\Database Library.pdb
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\bin\Debug\Database Library.dll
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\bin\Debug\Database Library.pdb
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\obj\Debug\Database Library.csprojAssemblyReference.cache
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\obj\Debug\Database Library.csproj.CoreCompileInputs.cache
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\obj\Debug\Database Library.dll
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Library\obj\Debug\Database Library.pdb
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Library\bin\Debug\Database Library.dll
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Library\bin\Debug\Database Library.pdb
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Library\obj\Debug\Database Library.csprojAssemblyReference.cache
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Library\obj\Debug\Database Library.csproj.CoreCompileInputs.cache
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Library\obj\Debug\Database Library.dll
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Library\obj\Debug\Database Library.pdb

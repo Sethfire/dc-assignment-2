@@ -1,0 +1,69 @@
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Client.exe.config
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Client.exe
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Client.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Server.exe
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Library.dll
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Server.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Server.exe.config
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Library.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.csprojAssemblyReference.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\MainWindow.g.cs
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\App.g.cs
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client_MarkupCompile.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client_MarkupCompile.lref
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\MainWindow.baml
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.g.resources
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database_Client.Properties.Resources.resources
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.csproj.GenerateResource.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.csproj.CoreCompileInputs.cache
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.csproj.CopyComplete
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.exe
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Interface.dll
+D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Interface.pdb
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Client.exe.config
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Client.exe
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Client.pdb
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Interface.dll
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Server.exe
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Library.dll
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Interface.pdb
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Server.pdb
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Server.exe.config
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\bin\Debug\Database Library.pdb
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.csprojAssemblyReference.cache
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\MainWindow.g.cs
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\App.g.cs
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client_MarkupCompile.cache
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client_MarkupCompile.lref
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\MainWindow.baml
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.g.resources
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database_Client.Properties.Resources.resources
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.csproj.GenerateResource.cache
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.csproj.CoreCompileInputs.cache
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.csproj.CopyComplete
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.exe
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Client\obj\Debug\Database Client.pdb
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Client.exe.config
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Client.exe
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Client.pdb
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Interface.dll
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Server.exe
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Library.dll
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Interface.pdb
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Server.pdb
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Server.exe.config
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\bin\Debug\Database Library.pdb
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database Client.csprojAssemblyReference.cache
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\MainWindow.g.cs
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\App.g.cs
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database Client_MarkupCompile.cache
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database Client_MarkupCompile.lref
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\MainWindow.baml
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database Client.g.resources
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database_Client.Properties.Resources.resources
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database Client.csproj.GenerateResource.cache
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database Client.csproj.CoreCompileInputs.cache
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database Client.csproj.CopyComplete
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database Client.exe
+C:\Development\DC Assignment 2\Tutorial 2 - Bank Application\Database Client\obj\Debug\Database Client.pdb

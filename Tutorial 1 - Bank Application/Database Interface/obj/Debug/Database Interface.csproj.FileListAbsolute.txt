@@ -4,3 +4,9 @@ D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\
 D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Interface\obj\Debug\Database Interface.csproj.CoreCompileInputs.cache
 D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Interface\obj\Debug\Database Interface.dll
 D:\Development\Curtin Programming\DC Assignment 2\Tutorial 1 - Bank Application\Database Interface\obj\Debug\Database Interface.pdb
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Interface\bin\Debug\Database Interface.dll
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Interface\bin\Debug\Database Interface.pdb
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Interface\obj\Debug\Database Interface.csprojAssemblyReference.cache
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Interface\obj\Debug\Database Interface.csproj.CoreCompileInputs.cache
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Interface\obj\Debug\Database Interface.dll
+C:\Development\DC Assignment 2\Tutorial 1 - Bank Application\Database Interface\obj\Debug\Database Interface.pdb
