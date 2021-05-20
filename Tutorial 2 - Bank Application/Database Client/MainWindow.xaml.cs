@@ -9,10 +9,10 @@ using System.Windows.Media.Imaging;
 
 namespace Database_Client
 {
-    public delegate void SearchOperation(string searchTerm);
+    public delegate void SearchDelegate(string searchTerm, out uint acctNo, out uint pin, out int bal, out string fName, out string lName, out Bitmap icon);
     public partial class MainWindow : Window
     {
-        private BusinessServerInterface dataServer;
+        private readonly BusinessServerInterface dataServer;
 
         public MainWindow()
         {
@@ -24,12 +24,13 @@ namespace Database_Client
             NetTcpBinding tcp = new NetTcpBinding();
 
             //Set URL and create connection
-            string URL = "net.tcp://localhost:8200/BusinessService";
+            var URL = "net.tcp://localhost:8200/BusinessService";
             channelFactory = new ChannelFactory<BusinessServerInterface>(tcp, URL);
             dataServer = channelFactory.CreateChannel();
 
             //Set Defaults
             LoadData(0);
+            IndexTextBox.Text = "0";
             TotalItemsLabel.Content = $"Total Items: {dataServer.GetNumEntries()}";
         }
         private void IndexButton_Click(object sender, RoutedEventArgs e)
@@ -45,37 +46,26 @@ namespace Database_Client
         }
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            //Set Text Boxes to ReadOnly
-            IndexTextBox.IsReadOnly = true;
-            SearchTextBox.IsReadOnly = true;
-            //Disable Buttons
-            IndexButton.IsEnabled = false;
-            SearchButton.IsEnabled = false;
-            //Set Progress Bar
-            SearchProgressBar.IsIndeterminate = true;
-
-            SearchOperation searchDelegate = SearchData;
-            AsyncCallback callbackDelegate = OnSearchDataCompletion;
-            searchDelegate.BeginInvoke(SearchTextBox.Text, callbackDelegate, null);
+            SearchData(SearchTextBox.Text);
         }
 
         private void SearchData(string searchTerm)
         {
             try
             {
-                Dispatcher.Invoke(() =>
-                {
-                    dataServer.SearchForEntry(SearchTextBox.Text, out uint acctNo, out uint pin, out int bal, out string fName, out string lName, out Bitmap icon);
+                //Set Text Boxes to ReadOnly
+                IndexTextBox.IsReadOnly = true;
+                SearchTextBox.IsReadOnly = true;
+                //Disable Buttons
+                IndexButton.IsEnabled = false;
+                SearchButton.IsEnabled = false;
+                //Set Progress Bar
+                SearchProgressBar.IsIndeterminate = true;
 
-                    FirstNameTextBox.Text = fName;
-                    LastNameTextBox.Text = lName;
-                    BalanceTextBox.Text = bal.ToString("C");
-                    AccountNoTextBox.Text = acctNo.ToString();
-                    PINTextBox.Text = pin.ToString("D4");
-
-                    UserImage.Source = Imaging.CreateBitmapSourceFromHBitmap(icon.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                    icon.Dispose();
-                });
+                //Asynchronously call dataServer.SearchForEntry()
+                SearchDelegate searchDelegate = new SearchDelegate(dataServer.SearchForEntry);
+                AsyncCallback callbackMethod = OnSearchDataCompletion;
+                searchDelegate.BeginInvoke(searchTerm, out uint acctNo, out uint pin, out int bal, out string fName, out string lName, out Bitmap icon, callbackMethod, null);
             }
             catch (FaultException<SearchFault> exception)
             {
@@ -85,22 +75,29 @@ namespace Database_Client
 
         private void OnSearchDataCompletion(IAsyncResult asyncResult)
         {
-            SearchOperation searchDelegate;
             AsyncResult asyncObject = (AsyncResult) asyncResult;
-            if (asyncObject.EndInvokeCalled == false)
-            {
-                searchDelegate = (SearchOperation)asyncObject.AsyncDelegate;
-                searchDelegate.EndInvoke(asyncObject);
+            SearchDelegate searchDelegate = (SearchDelegate) asyncObject.AsyncDelegate;
 
-                Dispatcher.Invoke(() =>
-                {
-                    IndexTextBox.IsReadOnly = false;
-                    SearchTextBox.IsReadOnly = false;
-                    IndexButton.IsEnabled = true;
-                    SearchButton.IsEnabled = true;
-                    SearchProgressBar.IsIndeterminate = false;
-                });
-            }
+            //Retrieve the information
+            searchDelegate.EndInvoke(out uint acctNo, out uint pin, out int bal, out string fName, out string lName, out Bitmap icon, asyncObject);
+
+            //Set the content to the retrieved information
+            FirstNameTextBox.Text = fName;
+            LastNameTextBox.Text = lName;
+            BalanceTextBox.Text = bal.ToString("C");
+            AccountNoTextBox.Text = acctNo.ToString();
+            PINTextBox.Text = pin.ToString("D4");
+
+            UserImage.Source = Imaging.CreateBitmapSourceFromHBitmap(icon.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+            icon.Dispose();
+
+            //Return to normal
+            IndexTextBox.IsReadOnly = false;
+            SearchTextBox.IsReadOnly = false;
+            IndexButton.IsEnabled = true;
+            SearchButton.IsEnabled = true;
+            SearchProgressBar.IsIndeterminate = false;
+
             asyncObject.AsyncWaitHandle.Close();
         }
 
