@@ -1,0 +1,56 @@
+﻿<div>
+    <h1>Users</h1>
+    <h2>Get User</h2>
+    <form>
+        <input type="text" id="id" name="id" placeholder="User ID" /><br />
+        <input type="text" id="fname" name="fname" placeholder="First Name" /><br />
+        <input type="text" id="lname" name="lname" placeholder="Last Name" /><br />
+    </form>
+    <button id="submitGetButton" onclick="onClickSubmitGetButton()">Get User</button>
+
+    <h2>Create User</h2>
+    <form>
+        <input type="text" id="id2" name="id2" placeholder="User ID" /><br />
+        <input type="text" id="fname2" name="fname2" placeholder="First Name" /><br />
+        <input type="text" id="lname2" name="lname2" placeholder="Last Name" /><br />
+    </form>
+    <button id="submitCreateButton" onclick="onClickSubmitCreateButton()">Create User</button>
+</div>
+
+<script>
+    function onClickSubmitGetButton() {
+        $.ajax({
+            url: "/api/User/" + $("#id").val(),
+            type: "get",
+            contentType: "application/json",
+            processData: false,
+            success: function (data, textStatus, jqXHR) {
+                $("#fname").val(data.FName);
+                $("#lname").val(data.LName);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    }
+
+    function onClickSubmitCreateButton() {
+        $.ajax({
+            url: "/api/User/new",
+            type: "POST",
+            contentType: "application/json",
+            processData: false,
+            data: JSON.stringify({
+                "UserID": $("#id2").val(),
+                "FName": $("#fname2").val(),
+                "LName": $("#lname2").val()
+            }),
+            success: function (data, textStatus, jqXHR) {
+                console.log("Success");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    }
+</script>

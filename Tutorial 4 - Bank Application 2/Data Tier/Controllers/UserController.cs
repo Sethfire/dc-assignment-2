@@ -33,11 +33,10 @@ namespace Data_Tier.Controllers
 
             userAccess.SelectUser(userID);
 
-            string fname, lname;
+            string fName, lName;
+            userAccess.GetUserName(out fName, out lName);
 
-            userAccess.GetUserName(out fname, out lname);
-
-            return new UserStruct(userID, fname, lname);
+            return new UserStruct(userID, fName, lName);
         }
 
         // Get Accounts by User
@@ -54,14 +53,14 @@ namespace Data_Tier.Controllers
         // Create new User
         [Route("api/User/new")]
         [HttpPost]
-        public void PostNewUser(UserStruct user)
+        public void PostNewUser([FromBody] UserStruct user)
         {
             Bank bank = Bank.GetInstance();
             UserAccessInterface userAccess = bank.GetUserAccess();
 
             uint id = userAccess.CreateUser();
             userAccess.SelectUser(id);
-            userAccess.SetUserName(user.Fname, user.Lname);
+            userAccess.SetUserName(user.FName, user.LName);
         }
     }
 }

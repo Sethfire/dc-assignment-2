@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API_Library;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,14 +8,14 @@ namespace Web_Server.Models
 {
     public static class Clients
     {
-        private static List<Client> clients = new List<Client>();
+        private static List<ClientStruct> clients = new List<ClientStruct>();
 
-        public static List<Client> GetClients()
+        public static List<ClientStruct> GetClients()
         {
             return clients;
         }
 
-        public static void AddClient(Client client)
+        public static void AddClient(ClientStruct client)
         {
             clients.Add(client);
         }

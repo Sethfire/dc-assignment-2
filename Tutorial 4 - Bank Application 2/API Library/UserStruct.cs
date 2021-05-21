@@ -8,15 +8,15 @@ namespace API_Library
 {
     public class UserStruct
     {
-        public uint userID;
-        public string Fname;
-        public string Lname;
+        public uint UserID;
+        public string FName;
+        public string LName;
 
-        public UserStruct(uint userID, string Fname, string Lname)
+        public UserStruct(uint UserID, string FName, string LName)
         {
-            this.userID = userID;
-            this.Fname = Fname;
-            this.Lname = Lname;
+            this.UserID = UserID;
+            this.FName = FName;
+            this.LName = LName;
         }
     }
 }

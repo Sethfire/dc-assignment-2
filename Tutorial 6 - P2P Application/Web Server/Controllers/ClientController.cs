@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API_Library;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,14 +13,14 @@ namespace Web_Server.Controllers
     {
         [Route("api/Client")]
         [HttpGet]
-        public List<Client> Get()
+        public List<ClientStruct> Get()
         {
             return Clients.GetClients();
         }
 
         [Route("api/Client")]
         [HttpPost]
-        public void Post(Client client)
+        public void Post([FromBody] ClientStruct client)
         {
             Clients.AddClient(client);
         }

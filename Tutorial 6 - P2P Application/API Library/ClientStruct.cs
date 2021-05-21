@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Web_Server.Models
+namespace API_Library
 {
-    public struct Client
+    public struct ClientStruct
     {
         public string IP;
         public uint Port;
