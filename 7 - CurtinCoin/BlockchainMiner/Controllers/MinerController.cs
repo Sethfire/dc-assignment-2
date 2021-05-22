@@ -12,13 +12,21 @@ using System.Web.Http;
 
 namespace BlockchainMiner.Controllers
 {
-    public class ValuesController : ApiController
+    public class MinerController : ApiController
     {
-        [Route("api/GenerateBlock")]
+        [Route("api/Mine")]
         [HttpPost]
-        public void Post([FromBody] Transaction transaction)
+        public IHttpActionResult Mine([FromBody] Transaction transaction)
         {
-            //Validate the transaction details
+            const string BlockchainServerURL = "http://localhost:63894/";
+            RestClient client = new RestClient(BlockchainServerURL);
+
+            RestRequest request = new RestRequest($"api/Blockchain/User/{transaction.SenderID}");
+            IRestResponse response = client.Get(request);
+            float senderBalance = JsonConvert.DeserializeObject<float>(response.Content);
+
+            //Validate that the sender has enough money in their account
+            if (senderBalance < transaction.Amount) return BadRequest();
 
             //Insert transaction details into a block
             Block block = new Block();
@@ -27,11 +35,9 @@ namespace BlockchainMiner.Controllers
             block.ReceiverID = transaction.ReceiverID;
 
             //Pull down last block from current blockchain and insert hash into new block
-            const string BlockchainServerURL = "http://localhost:63894/";
-            RestClient client = new RestClient(BlockchainServerURL);
-            RestRequest request = new RestRequest("api/Blockchain/Last");
-            IRestResponse response = client.Get(request);
-            Block lastBlock = JsonConvert.DeserializeObject<Block>(response.Content);
+            RestRequest request2 = new RestRequest("api/Blockchain/Last");
+            IRestResponse response2 = client.Get(request2);
+            Block lastBlock = JsonConvert.DeserializeObject<Block>(response2.Content);
 
             block.BlockID = lastBlock.BlockID + 1;
             block.PreviousHash = lastBlock.Hash;
@@ -42,9 +48,11 @@ namespace BlockchainMiner.Controllers
             hashGenenerator.GenerateHash(hashInput, out block.Offset, out block.Hash);
 
             //Submit block to server for inclusion into blockchain
-            RestRequest request2 = new RestRequest("api/Blockchain/New");
+            RestRequest request3 = new RestRequest("api/Blockchain/New");
             request2.AddJsonBody(block);
-            IRestResponse response2 = client.Post(request2);
+            IRestResponse response3 = client.Post(request3);
+
+            return Ok();
         }
     }
 }
