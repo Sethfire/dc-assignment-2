@@ -1,0 +1,10 @@
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\bin\Debug\TestConsole.exe.config
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\bin\Debug\TestConsole.exe
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\bin\Debug\TestConsole.pdb
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\bin\Debug\BlockchainLibrary.dll
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\bin\Debug\BlockchainLibrary.pdb
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\obj\Debug\TestConsole.csprojAssemblyReference.cache
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\obj\Debug\TestConsole.csproj.CoreCompileInputs.cache
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\obj\Debug\TestConsole.csproj.CopyComplete
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\obj\Debug\TestConsole.exe
+C:\Development\DC Assignment 2\7 - CurtinCoin\TestConsole\obj\Debug\TestConsole.pdb
