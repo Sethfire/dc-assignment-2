@@ -1,0 +1,6 @@
+D:\Development\Curtin Programming\DC Assignment 2\Bank Application 2\APILibrary\bin\Debug\APILibrary.dll
+D:\Development\Curtin Programming\DC Assignment 2\Bank Application 2\APILibrary\bin\Debug\APILibrary.pdb
+D:\Development\Curtin Programming\DC Assignment 2\Bank Application 2\APILibrary\obj\Debug\APILibrary.csprojAssemblyReference.cache
+D:\Development\Curtin Programming\DC Assignment 2\Bank Application 2\APILibrary\obj\Debug\APILibrary.csproj.CoreCompileInputs.cache
+D:\Development\Curtin Programming\DC Assignment 2\Bank Application 2\APILibrary\obj\Debug\APILibrary.dll
+D:\Development\Curtin Programming\DC Assignment 2\Bank Application 2\APILibrary\obj\Debug\APILibrary.pdb

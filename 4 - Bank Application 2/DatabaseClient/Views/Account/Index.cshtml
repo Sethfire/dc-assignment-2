@@ -1,0 +1,55 @@
+﻿<div>
+    <h1>Accounts</h1>
+    <h2>Get Account</h2>
+    <form>
+        <input type="text" id="accountid" name="accountid" placeholder="Account ID" /><br />
+        <input type="text" id="owner" name="owner" placeholder="Owner ID" /><br />
+        <input type="text" id="balance" name="balance" placeholder="Balance" /><br />
+    </form>
+    <button id="submitGetButton" onclick="onClickSubmitGetButton()">Get Account</button>
+
+    <h2>Create Account</h2>
+    <form>
+        <input type="text" id="userid" name="userid" placeholder="User ID" /><br />
+    </form>
+    <button id="submitCreateButton" onclick="onClickSubmitCreateButton()">Create Account</button>
+    <p id="submitResult"></p>
+</div>
+
+<script>
+    function onClickSubmitGetButton() {
+        $.ajax({
+            url: "/api/Account/" + $("#id").val(),
+            type: "get",
+            contentType: "application/json",
+            processData: false,
+            success: function (data, textStatus, jqXHR) {
+                $("#owner").val(data.Owner);
+                $("#balance").val(data.Balance);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    }
+
+    function onClickSubmitCreateButton() {
+        $.ajax({
+            url: "/api/Account/new",
+            type: "POST",
+            contentType: "application/json",
+            processData: false,
+            data: JSON.stringify({
+                "AccountID": 0,
+                "Owner": $("#userid").val(),
+                "Balance": 0
+            }),
+            success: function (data, textStatus, jqXHR) {
+                $("#submitResult").text("Account successfully created");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $("#submitResult").text("Error: Account creation failed");
+            }
+        });
+    }
+</script>
