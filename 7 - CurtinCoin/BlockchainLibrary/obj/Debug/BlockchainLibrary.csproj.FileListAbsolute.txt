@@ -4,3 +4,8 @@ C:\Development\DC Assignment 2\7 - CurtinCoin\BlockchainLibrary\obj\Debug\Blockc
 C:\Development\DC Assignment 2\7 - CurtinCoin\BlockchainLibrary\obj\Debug\BlockchainLibrary.csproj.CoreCompileInputs.cache
 C:\Development\DC Assignment 2\7 - CurtinCoin\BlockchainLibrary\obj\Debug\BlockchainLibrary.dll
 C:\Development\DC Assignment 2\7 - CurtinCoin\BlockchainLibrary\obj\Debug\BlockchainLibrary.pdb
+D:\Development\Curtin Programming\DC Assignment 2\7 - CurtinCoin\BlockchainLibrary\bin\Debug\BlockchainLibrary.dll
+D:\Development\Curtin Programming\DC Assignment 2\7 - CurtinCoin\BlockchainLibrary\bin\Debug\BlockchainLibrary.pdb
+D:\Development\Curtin Programming\DC Assignment 2\7 - CurtinCoin\BlockchainLibrary\obj\Debug\BlockchainLibrary.csproj.CoreCompileInputs.cache
+D:\Development\Curtin Programming\DC Assignment 2\7 - CurtinCoin\BlockchainLibrary\obj\Debug\BlockchainLibrary.dll
+D:\Development\Curtin Programming\DC Assignment 2\7 - CurtinCoin\BlockchainLibrary\obj\Debug\BlockchainLibrary.pdb

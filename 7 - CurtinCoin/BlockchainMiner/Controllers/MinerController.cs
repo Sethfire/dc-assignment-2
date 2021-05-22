@@ -14,45 +14,58 @@ namespace BlockchainMiner.Controllers
 {
     public class MinerController : ApiController
     {
+        public const string BlockchainServerURL = "http://localhost:63894/";
+
         [Route("api/Mine")]
         [HttpPost]
-        public IHttpActionResult Mine([FromBody] Transaction transaction)
+        public HttpResponseMessage Mine([FromBody] Transaction transaction)
         {
-            const string BlockchainServerURL = "http://localhost:63894/";
             RestClient client = new RestClient(BlockchainServerURL);
 
-            RestRequest request = new RestRequest($"api/Blockchain/User/{transaction.SenderID}");
-            IRestResponse response = client.Get(request);
+            //Retrieve the balance of the sender's wallet
+            var request = new RestRequest($"api/Blockchain/User/{transaction.SenderID}");
+            var response = client.Get(request);
+
+            //Retrieve the last block from current blockchain
+            var request2 = new RestRequest("api/Blockchain/Last");
+            var response2 = client.Get(request2);
+
+            if (response.StatusCode == HttpStatusCode.BadRequest)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Unable to retrieve sender wallet");
+
+            if (response2.StatusCode == HttpStatusCode.BadRequest)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Unable to retrieve last block");
+
+            //Validate that the sender has enough coins in their account (With the sole exception being ID 0, the bank)
             float senderBalance = JsonConvert.DeserializeObject<float>(response.Content);
+            if ((transaction.SenderID != 0) && (senderBalance < transaction.Amount))
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Sender does not have enough coins");
 
-            //Validate that the sender has enough money in their account
-            if (senderBalance < transaction.Amount) return BadRequest();
-
-            //Insert transaction details into a block
+            //Create and Insert transaction details into a block
             Block block = new Block();
             block.Amount = transaction.Amount;
             block.SenderID = transaction.SenderID;
             block.ReceiverID = transaction.ReceiverID;
 
-            //Pull down last block from current blockchain and insert hash into new block
-            RestRequest request2 = new RestRequest("api/Blockchain/Last");
-            IRestResponse response2 = client.Get(request2);
+            //Insert previous block hash into the block
             Block lastBlock = JsonConvert.DeserializeObject<Block>(response2.Content);
-
             block.BlockID = lastBlock.BlockID + 1;
             block.PreviousHash = lastBlock.Hash;
 
-            //Create new hash
-            string hashInput = $"{block.BlockID}{block.SenderID}{block.ReceiverID}{block.Amount}{block.PreviousHash}";
+            //Create a new hash
             HashGenerator hashGenenerator = new HashGenerator();
+            string hashInput = $"{block.BlockID}{block.SenderID}{block.ReceiverID}{block.Amount}{block.PreviousHash}";
             hashGenenerator.GenerateHash(hashInput, out block.Offset, out block.Hash);
 
             //Submit block to server for inclusion into blockchain
-            RestRequest request3 = new RestRequest("api/Blockchain/New");
-            request2.AddJsonBody(block);
-            IRestResponse response3 = client.Post(request3);
+            var request3 = new RestRequest("api/Blockchain/New");
+            request3.AddJsonBody(block);
+            var response3 = client.Post(request3);
 
-            return Ok();
+            if (response3.StatusCode == HttpStatusCode.BadRequest)
+                return Request.CreateResponse(HttpStatusCode.BadRequest, JsonConvert.DeserializeObject<string>(response3.Content));
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

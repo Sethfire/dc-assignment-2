@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TransactionGenerator"
         mc:Ignorable="d"
-        Title="Transaction Generator" Height="450" Width="800">
+        Title="Transaction Generator" Height="320" Width="700">
     <Grid>
-        
+        <Label Content="Create Transaction" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,71,0,0" TextWrapping="Wrap" Text="Amount" VerticalAlignment="Top"/>
+        <TextBox x:Name="AmountBox" HorizontalAlignment="Left" Height="23" Margin="10,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,120,0,0" TextWrapping="Wrap" Text="Sender ID" VerticalAlignment="Top"/>
+        <TextBox x:Name="SenderIDBox" HorizontalAlignment="Left" Height="23" Margin="10,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,169,0,0" TextWrapping="Wrap" Text="Receiver ID" VerticalAlignment="Top"/>
+        <TextBox x:Name="ReceiverIDBox" HorizontalAlignment="Left" Height="23" Margin="10,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="10,224,0,0" VerticalAlignment="Top" Width="80" Click="TransactionButton_Click" />
+        <TextBlock x:Name="TransactionResult" HorizontalAlignment="Left" Margin="10,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+
+        <Label Content="Blockchain State" HorizontalAlignment="Left" Margin="252,10,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="NumberOfBlocks" HorizontalAlignment="Left" Margin="252,71,0,0" TextWrapping="Wrap" Text="Number of Blocks:" VerticalAlignment="Top"/>
+
+        <Label Content="User Accounts" HorizontalAlignment="Left" Margin="490,10,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="UserBalance" HorizontalAlignment="Left" Margin="490,71,0,0" TextWrapping="Wrap" Text="Balance:" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="490,96,0,0" TextWrapping="Wrap" Text="User ID" VerticalAlignment="Top"/>
+        <TextBox x:Name="UserIDBox" HorizontalAlignment="Left" Height="23" Margin="490,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Get Balance" HorizontalAlignment="Left" Margin="490,151,0,0" VerticalAlignment="Top" Width="80" Click="BalanceButton_Click" />
+        <TextBlock x:Name="BalanceResult" HorizontalAlignment="Left" Margin="490,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
     </Grid>
 </Window>
