@@ -1,0 +1,64 @@
+﻿<div>
+    <h1>Transactions</h1>
+    <h2>Get Transaction</h2>
+    <form>
+        <input type="text" id="transactionid" name="transactionid" placeholder="Transaction ID" /><br />
+        <input type="text" id="amount" name="amount" placeholder="Amount" /><br />
+        <input type="text" id="senderid" name="senderid" placeholder="Sender Account ID" /><br />
+        <input type="text" id="receiverid" name="receiverid" placeholder="Receiver Account ID" /><br />
+    </form>
+    <button id="submitGetButton" onclick="onClickSubmitGetButton()">Get Transaction</button>
+    <p id="getResult"></p>
+
+    <h2>Create Transaction</h2>
+    <form>
+        <input type="text" id="newamount" name="newamount" placeholder="Amount" /><br />
+        <input type="text" id="newsenderid" name="newsenderid" placeholder="Sender Account ID" /><br />
+        <input type="text" id="newreceiverid" name="newreceiverid" placeholder="Receiver Account ID" /><br />
+    </form>
+    <button id="submitCreateButton" onclick="onClickSubmitCreateButton()">Create Transaction</button>
+    <p id="createResult"></p>
+</div>
+
+<script>
+    function onClickSubmitGetButton() {
+        $.ajax({
+            url: "/api/Transaction/" + $("#transactionid").val(),
+            type: "GET",
+            contentType: "application/json",
+            processData: false,
+            success: function (data, textStatus, jqXHR) {
+                $("#amount").val(data.Amount);
+                $("#senderid").val(data.SenderID);
+                $("#receiverid").val(data.ReceiverID);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $("#getResult").text("Error: Transaction not found");
+            }
+        });
+    }
+
+    function onClickSubmitCreateButton() {
+        $.ajax({
+            url: "/api/Transaction/new",
+            type: "POST",
+            contentType: "application/json",
+            processData: false,
+            data: JSON.stringify({
+                "TransactionID": 0,
+                "Amount": $("#newamount").val(),
+                "SenderID": $("#newsenderid").val(),
+                "ReceiverID": $("#newreceiverid").val()
+            }),
+            success: function (data, textStatus, jqXHR) {
+                $("#newamount").val("");
+                $("#newsenderid").val("");
+                $("#newreceiverid").val("");
+                $("#createResult").text("Transaction successfully created with ID " + data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $("#createResult").text("Error: Transaction creation failed");
+            }
+        });
+    }
+</script>

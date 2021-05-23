@@ -1,0 +1,49 @@
+﻿<div id="navigation">
+    <h1>Navigation</h1>
+    <button onclick="ShowUserPage()">Users</button>
+    <button onclick="ShowAccountPage()">Accounts</button>
+    <button onclick="ShowTransactionPage()">Transactions</button>
+</div>
+<div id="content">
+</div>
+<script>
+    function ShowUserPage() {
+        $.ajax({
+            url: "UserPage.html",
+            type: "GET",
+            processData: false,
+            success: function (data, t, j) {
+                $("#content").html(data);
+            },
+            error: function (j, t, e) {
+                console.log("Error:" + e);
+            }
+        });
+    }
+    function ShowAccountPage() {
+        $.ajax({
+            url: "AccountPage.html",
+            type: "GET",
+            processData: false,
+            success: function (data, t, j) {
+                $("#content").html(data);
+            },
+            error: function (j, t, e) {
+                console.log("Error:" + e);
+            }
+        });
+    }
+    function ShowTransactionPage() {
+        $.ajax({
+            url: "TransactionPage.html",
+            type: "GET",
+            processData: false,
+            success: function (data, t, j) {
+                $("#content").html(data);
+            },
+            error: function (j, t, e) {
+                console.log("Error:" + e);
+            }
+        });
+    }
+</script>

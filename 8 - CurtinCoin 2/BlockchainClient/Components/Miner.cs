@@ -72,20 +72,14 @@ namespace BlockchainClient.Components
                         //Iterate through each client
                         foreach (ClientStruct client in clients)
                         {
-                            if (Blockchain.MyClientName != null)
-                            {
-                                if (Blockchain.MyClientName.Equals(client.Name) == false)
-                                {
-                                    ChannelFactory<ClientServerInterface> channelFactory;
-                                    NetTcpBinding tcp = new NetTcpBinding();
+                            ChannelFactory<ClientServerInterface> channelFactory;
+                            NetTcpBinding tcp = new NetTcpBinding();
 
-                                    channelFactory = new ChannelFactory<ClientServerInterface>(tcp, $"net.tcp://localhost:{client.Port}/ClientServer");
-                                    ClientServerInterface clientServer = channelFactory.CreateChannel();
+                            channelFactory = new ChannelFactory<ClientServerInterface>(tcp, $"net.tcp://localhost:{client.Port}/ClientServer");
+                            ClientServerInterface clientServer = channelFactory.CreateChannel();
 
-                                    Block block = clientServer.GetCurrentBlock();
-                                    hashes.Add(block.Hash);
-                                }
-                            }
+                            Block block = clientServer.GetCurrentBlock();
+                            hashes.Add(block.Hash);
                         }
                     }
                 }
