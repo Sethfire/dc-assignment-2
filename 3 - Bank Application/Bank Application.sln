@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database Client", "Database
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database Interface", "Database Interface\Database Interface.csproj", "{F55918A2-88FE-44BB-9DD7-23900102BB3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business Server", "Business Server\Business Server.csproj", "{2BB7EBE9-C885-4470-AB9D-878583648119}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database API", "Database API\Database API.csproj", "{F7E8A1CB-96C8-451E-8DAF-97C0E34F5E44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API Classes", "API Classes\API Classes.csproj", "{30E50EB5-0833-4B14-AF93-848C8428D8AD}"
@@ -39,10 +37,6 @@ Global
 		{F55918A2-88FE-44BB-9DD7-23900102BB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F55918A2-88FE-44BB-9DD7-23900102BB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F55918A2-88FE-44BB-9DD7-23900102BB3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2BB7EBE9-C885-4470-AB9D-878583648119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BB7EBE9-C885-4470-AB9D-878583648119}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2BB7EBE9-C885-4470-AB9D-878583648119}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2BB7EBE9-C885-4470-AB9D-878583648119}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F7E8A1CB-96C8-451E-8DAF-97C0E34F5E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7E8A1CB-96C8-451E-8DAF-97C0E34F5E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7E8A1CB-96C8-451E-8DAF-97C0E34F5E44}.Release|Any CPU.ActiveCfg = Release|Any CPU

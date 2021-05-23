@@ -8,9 +8,9 @@ namespace DatabaseClient.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
         public ActionResult Index()
         {
+            ViewBag.Title = "Account Page";
             return View();
         }
     }

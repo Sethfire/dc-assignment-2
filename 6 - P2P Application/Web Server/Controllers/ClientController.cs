@@ -13,16 +13,18 @@ namespace Web_Server.Controllers
     {
         [Route("api/Client")]
         [HttpGet]
-        public List<ClientStruct> Get()
+        public HttpResponseMessage Get()
         {
-            return Clients.GetClients();
+            List<ClientStruct> clients = Clients.GetClients();
+            return Request.CreateResponse(HttpStatusCode.OK, clients);
         }
 
-        [Route("api/Client")]
+        [Route("api/Client/New")]
         [HttpPost]
-        public void Post([FromBody] ClientStruct client)
+        public HttpResponseMessage Post([FromBody] ClientStruct client)
         {
             Clients.AddClient(client);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

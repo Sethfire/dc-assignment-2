@@ -14,29 +14,34 @@ namespace DatabaseClient.Controllers
     {
         [Route("api/User/{userID}")]
         [HttpGet]
-        public UserStruct GetUser(uint userID)
+        public HttpResponseMessage GetUser(uint userID)
         {
             RestClient client = new RestClient("http://localhost:57464/");
 
             RestRequest request = new RestRequest("api/User/" + userID);
             IRestResponse response = client.Get(request);
 
+            if (response.StatusCode == HttpStatusCode.NotFound)
+                return Request.CreateResponse(HttpStatusCode.NotFound, JsonConvert.DeserializeObject<string>(response.Content));
+
             UserStruct user = JsonConvert.DeserializeObject<UserStruct>(response.Content);
-            return user;
+            return Request.CreateResponse(HttpStatusCode.OK, user);
         }
 
-        [Route("api/User/new")]
+        [Route("api/User/New")]
         [HttpPost]
-        public void CreateUser([FromBody] UserStruct user)
+        public HttpResponseMessage CreateUser([FromBody] UserStruct user)
         {
             RestClient client = new RestClient("http://localhost:57464/");
 
-            RestRequest request = new RestRequest("api/User/new");
+            RestRequest request = new RestRequest("api/User/New");
             request.AddJsonBody(user);
             IRestResponse response = client.Post(request);
+            uint userID = JsonConvert.DeserializeObject<uint>(response.Content);
 
             RestRequest request2 = new RestRequest("api/SaveToDisk");
             IRestResponse response2 = client.Get(request2);
+            return Request.CreateResponse(HttpStatusCode.OK, userID);
         }
     }
 }

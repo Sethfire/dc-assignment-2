@@ -12,16 +12,18 @@ namespace DatabaseServer.Controllers
     {
         [Route("api/ProcessAllTransactions")]
         [HttpGet]
-        public void ProcessAllTransactions()
+        public HttpResponseMessage ProcessAllTransactions()
         {
             Bank.ProcessAllTransactions();
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         [Route("api/SaveToDisk")]
         [HttpGet]
-        public void SaveToDisk()
+        public HttpResponseMessage SaveToDisk()
         {
             Bank.SaveToDisk();
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

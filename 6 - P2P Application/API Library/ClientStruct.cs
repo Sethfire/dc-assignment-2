@@ -8,6 +8,7 @@ namespace API_Library
 {
     public struct ClientStruct
     {
+        public string ClientName;
         public string IP;
         public uint Port;
     }

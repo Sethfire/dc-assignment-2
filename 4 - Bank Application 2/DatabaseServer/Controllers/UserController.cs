@@ -10,28 +10,34 @@ namespace DatabaseServer.Controllers
 {
     public class UserController : ApiController
     {
-        //Get All Users
+        //Retrieve All Users
         [Route("api/User")]
         [HttpGet]
-        public List<uint> GetUsers()
+        public HttpResponseMessage GetUsers()
         {
-            return Models.User.GetUsers();
+            List<uint> users = Models.User.GetUsers();
+            return Request.CreateResponse(HttpStatusCode.OK, users);
         }
 
-        //Get User
+        //Retrieve User
         [Route("api/User/{userID}")]
         [HttpGet]
-        public UserStruct GetUser(uint userID)
+        public HttpResponseMessage GetUser(uint userID)
         {
-            return Models.User.GetUser(userID);
+            UserStruct user = Models.User.GetUser(userID);
+            if (user == null)
+                return Request.CreateResponse(HttpStatusCode.NotFound, $"User with ID {userID} not found");
+
+            return Request.CreateResponse(HttpStatusCode.OK, user);
         }
 
         //Create new User
-        [Route("api/User/new")]
+        [Route("api/User/New")]
         [HttpPost]
-        public void PostUser([FromBody]UserStruct user)
+        public HttpResponseMessage PostUser([FromBody]UserStruct user)
         {
-            Models.User.CreateUser(user);
+            uint userID = Models.User.CreateUser(user);
+            return Request.CreateResponse(HttpStatusCode.OK, userID);
         }
     }
 }

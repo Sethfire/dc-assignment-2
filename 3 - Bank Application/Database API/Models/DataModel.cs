@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.ServiceModel;
+using System.Threading;
 using System.Web;
 
 namespace Database_API.Models
@@ -43,8 +44,8 @@ namespace Database_API.Models
 
         public static void SearchForEntry(string searchTerm, out uint acctNo, out uint pin, out int bal, out string fName, out string lName)
         {
-            //Add a 1 second delay to make it "feel" more realistic
-            //Thread.Sleep(1000);
+            //Add a few seconds delay to make it "feel" more realistic
+            Thread.Sleep(2000);
 
             bool found = false;
 

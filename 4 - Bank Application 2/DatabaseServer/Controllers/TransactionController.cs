@@ -10,28 +10,34 @@ namespace DatabaseServer.Controllers
 {
     public class TransactionController : ApiController
     {
-        //Get All Transactions
+        //Retrieve All Transactions
         [Route("api/Transaction")]
         [HttpGet]
-        public List<uint> GetTransactions()
+        public HttpResponseMessage GetTransactions()
         {
-            return Models.Transaction.GetTransactions();
+            List<uint> transactions = Models.Transaction.GetTransactions();
+            return Request.CreateResponse(HttpStatusCode.OK, transactions);
         }
 
-        //Get Transaction
+        //Retrieve Transaction
         [Route("api/Transaction/{userID}")]
         [HttpGet]
-        public TransactionStruct GetTransaction(uint transactionID)
+        public HttpResponseMessage GetTransaction(uint transactionID)
         {
-            return Models.Transaction.GetTransaction(transactionID);
+            TransactionStruct transaction = Models.Transaction.GetTransaction(transactionID);
+            if (transaction == null)
+                return Request.CreateResponse(HttpStatusCode.NotFound, $"Transaction with ID {transactionID} not found");
+
+            return Request.CreateResponse(HttpStatusCode.OK, transaction);
         }
 
         //Create new Transaction
-        [Route("api/Transaction/new")]
+        [Route("api/Transaction/New")]
         [HttpPost]
-        public void PostTransaction([FromBody]TransactionStruct transaction)
+        public HttpResponseMessage PostTransaction([FromBody]TransactionStruct transaction)
         {
             Models.Transaction.CreateTransaction(transaction);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

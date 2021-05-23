@@ -1,51 +1,68 @@
 ﻿using API_Classes;
 using Database_API.Models;
+using Database_Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.ServiceModel;
 using System.Web.Http;
 
 namespace Database_API.Controllers
 {
     public class ValuesController : ApiController
     {
-        [Route("api/values")]
+        [Route("api/Values")]
         [HttpGet]
-        public int GetNumEntries()
+        public HttpResponseMessage GetNumEntries()
         {
-            return DataModel.GetNumEntries();
+            int numEntries = DataModel.GetNumEntries();
+            return Request.CreateResponse(HttpStatusCode.OK, numEntries);
         }
 
-        [Route("api/values/{index}")]
+        [Route("api/Values/{index}")]
         [HttpGet]
-        public DataStruct GetData(int index)
+        public HttpResponseMessage GetData(int index)
         {
-            DataModel.GetValuesForEntry(index, out uint acctNo, out uint pin, out int bal, out string fName, out string lName);
             DataStruct data = new DataStruct();
-            data.acctNo = acctNo;
-            data.pin = pin;
-            data.bal = bal;
-            data.fName = fName;
-            data.lName = lName;
+            try
+            {
+                DataModel.GetValuesForEntry(index, out uint acctNo, out uint pin, out int bal, out string fName, out string lName);
+                data.acctNo = acctNo;
+                data.pin = pin;
+                data.bal = bal;
+                data.fName = fName;
+                data.lName = lName;
+            }
+            catch (FaultException<IndexFault> exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, exception.Detail.Issue);
+            }
 
-            return data;
+            return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
-        [Route("api/values/search/{searchTerm}")]
+        [Route("api/Values/Search/{searchTerm}")]
         [HttpGet]
-        public DataStruct SearchData(string searchTerm)
+        public HttpResponseMessage SearchData(string searchTerm)
         {
-            DataModel.SearchForEntry(searchTerm, out uint acctNo, out uint pin, out int bal, out string fName, out string lName);
             DataStruct data = new DataStruct();
-            data.acctNo = acctNo;
-            data.pin = pin;
-            data.bal = bal;
-            data.fName = fName;
-            data.lName = lName;
+            try
+            {
+                DataModel.SearchForEntry(searchTerm, out uint acctNo, out uint pin, out int bal, out string fName, out string lName);
+                data.acctNo = acctNo;
+                data.pin = pin;
+                data.bal = bal;
+                data.fName = fName;
+                data.lName = lName;
+            }
+            catch (FaultException<SearchFault> exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, exception.Detail.Issue);
+            }
 
-            return data;
+            return Request.CreateResponse(HttpStatusCode.OK, data);
         }
     }
 }

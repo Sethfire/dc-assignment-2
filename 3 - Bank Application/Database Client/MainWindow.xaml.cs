@@ -6,6 +6,7 @@ using System;
 using System.Drawing;
 using System.Runtime.Remoting.Messaging;
 using System.ServiceModel;
+using System.Threading;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
@@ -15,7 +16,7 @@ namespace Database_Client
     public delegate void SearchDelegate(string searchTerm, out uint acctNo, out uint pin, out int bal, out string fName, out string lName, out Bitmap icon);
     public partial class MainWindow : Window
     {
-        private const string BusinessServerURL = "http://localhost:57278/";
+        public const string BusinessServerURL = "http://localhost:57278/";
 
         public MainWindow()
         {
@@ -24,9 +25,8 @@ namespace Database_Client
 
             //Connect to Web API
             RestClient client = new RestClient(BusinessServerURL);
-            RestRequest request = new RestRequest("api/values");
-
-            IRestResponse response = client.Get(request);
+            var request = new RestRequest("api/values");
+            var response = client.Get(request);
             int numEntries = JsonConvert.DeserializeObject<int>(response.Content);
 
             //Set Defaults
@@ -47,39 +47,59 @@ namespace Database_Client
         }
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            SearchData(SearchTextBox.Text);
+            //Set Text Boxes to ReadOnly
+            IndexTextBox.IsReadOnly = true;
+            SearchTextBox.IsReadOnly = true;
+            //Disable Buttons
+            IndexButton.IsEnabled = false;
+            SearchButton.IsEnabled = false;
+            //Set Progress Bar
+            SearchProgressBar.IsIndeterminate = true;
+
+            string searchTerm = SearchTextBox.Text;
+            Thread thread = new Thread(()=>SearchData(searchTerm));
+            thread.Start();
         }
 
         private void SearchData(string searchTerm)
         {
-            try
-            {
-                RestClient client = new RestClient(BusinessServerURL);
-                RestRequest request = new RestRequest($"api/values/search/{searchTerm}");
+            RestClient client = new RestClient(BusinessServerURL);
+            var request = new RestRequest($"api/values/search/{searchTerm}");
+            var response = client.Get(request);
 
-                IRestResponse response = client.Get(request);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
                 DataStruct data = JsonConvert.DeserializeObject<DataStruct>(response.Content);
 
-                FirstNameTextBox.Text = data.fName;
-                LastNameTextBox.Text = data.lName;
-                BalanceTextBox.Text = data.bal.ToString("C");
-                AccountNoTextBox.Text = data.acctNo.ToString();
-                PINTextBox.Text = data.pin.ToString("D4");
+                Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    FirstNameTextBox.Text = data.fName;
+                    LastNameTextBox.Text = data.lName;
+                    BalanceTextBox.Text = data.bal.ToString("C");
+                    AccountNoTextBox.Text = data.acctNo.ToString();
+                    PINTextBox.Text = data.pin.ToString("D4");
+
+                    IndexTextBox.IsReadOnly = false;
+                    SearchTextBox.IsReadOnly = false;
+                    IndexButton.IsEnabled = true;
+                    SearchButton.IsEnabled = true;
+                    SearchProgressBar.IsIndeterminate = false;
+                }));
             }
-            catch (FaultException<SearchFault> exception)
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
-                MessageBox.Show("Error: " + exception.Detail.Issue);
+                MessageBox.Show("Error: Account not found");
             }
-        }
+}
 
         private void LoadData(int index)
         {
-            try
-            {
-                RestClient client = new RestClient(BusinessServerURL);
-                RestRequest request = new RestRequest($"api/values/{index}");
+            RestClient client = new RestClient(BusinessServerURL);
+            var request = new RestRequest($"api/values/{index}");
+            var response = client.Get(request);
 
-                IRestResponse response = client.Get(request);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
                 DataStruct data = JsonConvert.DeserializeObject<DataStruct>(response.Content);
 
                 FirstNameTextBox.Text = data.fName;
@@ -88,9 +108,9 @@ namespace Database_Client
                 AccountNoTextBox.Text = data.acctNo.ToString();
                 PINTextBox.Text = data.pin.ToString("D4");
             }
-            catch (FaultException<IndexFault> exception)
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
-                MessageBox.Show("Error: " + exception.Detail.Issue);
+                MessageBox.Show("Error: Account not found");
             }
         }
     }

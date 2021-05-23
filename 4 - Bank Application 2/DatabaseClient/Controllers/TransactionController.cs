@@ -8,9 +8,10 @@ namespace DatabaseClient.Controllers
 {
     public class TransactionController : Controller
     {
-        // GET: Transaction
         public ActionResult Index()
         {
+            ViewBag.Title = "Transaction Page";
+
             return View();
         }
     }

@@ -23,17 +23,28 @@ namespace DatabaseServer.Models
 
         public static UserStruct GetUser(uint userID)
         {
+            UserStruct user = null;
             userAccess.SelectUser(userID);
-            userAccess.GetUserName(out string fName, out string lName);
+            try
+            {
+                userAccess.GetUserName(out string fName, out string lName);
+                user = new UserStruct(userID, fName, lName);
+            }
+            catch(Exception e)
+            {
+                //Just ignore
+            }
 
-            return new UserStruct(userID, fName, lName);
+            return user;
         }
 
-        public static void CreateUser(UserStruct user)
+        public static uint CreateUser(UserStruct user)
         {
-            uint id = userAccess.CreateUser();
-            userAccess.SelectUser(id);
+            uint userID = userAccess.CreateUser();
+            userAccess.SelectUser(userID);
             userAccess.SetUserName(user.FName, user.LName);
+
+            return userID;
         }
     }
 }

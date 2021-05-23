@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientApplication"
         mc:Ignorable="d"
-        Title="Client Application" Height="450" Width="800">
+        Title="Client Application" Height="300" Width="600">
     <Grid>
-        
+        <Grid HorizontalAlignment="Left" Height="258" Margin="0,1,0,0" VerticalAlignment="Top" Width="160">
+            <Label Content="Start Server" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,57,0,0" TextWrapping="Wrap" Text="Client Name" VerticalAlignment="Top"/>
+            <TextBox x:Name="ClientNameBox" HorizontalAlignment="Left" Height="23" Margin="10,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,101,0,0" TextWrapping="Wrap" Text="Port Number" VerticalAlignment="Top"/>
+            <TextBox x:Name="PortNumberBox" HorizontalAlignment="Left" Height="23" Margin="10,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="StartServerButton" Content="Start" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="75" Click="StartServerButton_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="269" Margin="160,0,0,0" VerticalAlignment="Top" Width="432">
+            <Label Content="Jobs Board" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24"/>
+            <TextBlock x:Name="AvailableJobs" HorizontalAlignment="Left" Margin="141,22,0,0" TextWrapping="Wrap" Text="Available Jobs:" VerticalAlignment="Top" FontSize="9"/>
+            <TextBlock x:Name="CompletedJobs" HorizontalAlignment="Left" Margin="141,38,0,0" TextWrapping="Wrap" Text="Completed Jobs:" VerticalAlignment="Top" FontSize="9"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,57,0,0" TextWrapping="Wrap" Text="Code" VerticalAlignment="Top"/>
+            <TextBox x:Name="JobTextBox" HorizontalAlignment="Left" Height="67" Margin="10,78,-52,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374" AcceptsReturn="True" AcceptsTab="True"/>
+
+            <TextBlock HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="Function Name" VerticalAlignment="Top"/>
+            <TextBox x:Name="FunctionNameBox" HorizontalAlignment="Left" Height="23" Margin="10,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBlock HorizontalAlignment="Left" Margin="137,150,0,0" TextWrapping="Wrap" Text="Var A" VerticalAlignment="Top"/>
+            <TextBox x:Name="VarABox" HorizontalAlignment="Left" Height="23" Margin="137,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBlock HorizontalAlignment="Left" Margin="264,150,0,0" TextWrapping="Wrap" Text="Var B" VerticalAlignment="Top"/>
+            <TextBox x:Name="VarBBox" HorizontalAlignment="Left" Height="23" Margin="264,171,-52,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+            <Button x:Name="PostJobButton" Content="Post Job" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="75" Click="PostJobButton_Click"/>
+        </Grid>
+
     </Grid>
 </Window>
